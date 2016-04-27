@@ -1,0 +1,28 @@
+{
+	"name": "family/tree",
+	"description": "Family tree project",
+	"license": "MIT",
+	"type": "project",
+	"require": {
+
+	},
+	"autoload": {
+		"classmap": [
+			"app/commands",
+			"app/controllers",
+			"app/models",
+			"app/helpers",
+			"vendor/controllers",
+			"vendor/interfaces",
+			"vendor/components",
+			"vendor/traits",
+			"vendor/models"
+		],
+		"files": [
+		]
+	},
+	"config": {
+		"preferred-install": "dist"
+	},
+	"minimum-stability": "stable"
+}
