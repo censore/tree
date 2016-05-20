@@ -12,8 +12,9 @@ class Loader extends Controller {
     private static $_instance;
     public $application;
 
-    public function init(){
+    public function init($directory){
         if(self::$_instance === null) self::$_instance = new self();
+        self::$_instance->systemDirectory = $directory;
         return self::$_instance;
     }
     public function app(){

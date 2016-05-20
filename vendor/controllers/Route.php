@@ -22,6 +22,7 @@ class Route extends GetSetRunImplementation implements ConfigGroupInterface{
 
     }
     public function startSite(){
+
         $controller = (isset($this->config['controller'])? $this->config['controller'] : 'c');
         $method = (isset($this->config['method'])? $this->config['method'] : 'm');
 
@@ -30,8 +31,10 @@ class Route extends GetSetRunImplementation implements ConfigGroupInterface{
         if(isset($_REQUEST[$controller])){
             $class = $this->config['app_directory'] .  ucfirst($_REQUEST[$controller]) . 'Controller';
             if(class_exists($class)){
+                $this->defaultController = $_REQUEST[$controller];
                 $callClass = $class;
             }else{
+                Loader::app()->flash('404 - Requested path not found!' . $class);
             }
         }
 
@@ -41,4 +44,11 @@ class Route extends GetSetRunImplementation implements ConfigGroupInterface{
         $this->runMethod = $method;
         return $this;
     }
+    public function changeQueryType(){
+        if(isset($_REQUEST['format']) && $_REQUEST['format'] == 'json') Loader::app()->requestType = 'json';
+    }
+    public function redirect($path){
+        header("location: {$path}",null, 302);
+    }
+
 }

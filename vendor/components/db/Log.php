@@ -12,7 +12,7 @@ class Log {
     }
 
     public function write($message) {
-        $date = new DateTime();
+        $date = new \DateTime();
         $log = $this->path . $date->format('Y-m-d').".txt";
 
         if(is_dir($this->path)) {

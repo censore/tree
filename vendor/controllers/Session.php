@@ -12,8 +12,8 @@ namespace core\Controllers;
 abstract class Session {
     public static function get($key){
         self::checkSession();
-
-        return (!$_SESSION || !isset($_SESSION[$key]) ?null:$_SESSION[$key]);
+        $val = (!$_SESSION || !isset($_SESSION[$key]) ?null:$_SESSION[$key]);
+        return $val;
     }
 
     public static function set($key, $val){
@@ -25,7 +25,7 @@ abstract class Session {
 
     public static function init(){
         session_start();
-        $_SESSION = [];
+        $_SESSION='';
     }
 
     public static function kill($key){
@@ -46,7 +46,7 @@ abstract class Session {
         session_destroy();
     }
     public static function checkSession(){
-        if (session_status() == PHP_SESSION_NONE) {
+        if (session_id() == '') {
            self::init();
         }
     }

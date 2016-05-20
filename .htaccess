@@ -1,0 +1,39 @@
+RewriteEngine On
+RewriteBase /
+RewriteRule ^(.*)\.json$ /index.php?c=$1&format=json [nc]
+RewriteRule ^(.*)\.xml$ /index.php?c=$1&format=xml [nc]
+
+RewriteCond $1 !^(index\.php|public|css|js|robots\.txt|assets)
+
+RewriteRule ^auth/$ /login.php?c=user&m=auth 
+RewriteRule ^register/$ /login.php?c=user&m=register 
+
+RewriteRule ^greed/$ /index.php?c=tree
+RewriteRule ^greed/load$ /index.php?c=tree&m=load [QSA,L]
+RewriteRule ^greed/load/$ /index.php?c=tree&m=load [QSA,L]
+
+
+########################################################
+
+RewriteRule ^save/humans$ /index.php?c=save&m=humans [QSA,L]
+RewriteRule ^save/humans/$ /index.php?c=save&m=humans [QSA,L]
+
+RewriteRule ^save/coords$ /index.php?c=save&m=coords [QSA,L]
+RewriteRule ^save/coords/$ /index.php?c=save&m=coords [QSA,L]
+
+RewriteRule ^save/background /index.php?c=save&m=background [QSA,L]
+RewriteRule ^save/background/$ /index.php?c=save&m=background [QSA,L]
+
+RewriteRule ^save/menu /index.php?c=save&m=menu [QSA,L]
+RewriteRule ^save/menu/$ /index.php?c=save&m=menu [QSA,L]
+########################################################
+RewriteRule ^ajax/relate /index.php?c=ajax&m=relate
+RewriteRule ^ajax/relate/$ /index.php?c=ajax&m=relate
+
+RewriteRule ^ajax/menu /index.php?c=ajax&m=menu
+RewriteRule ^ajax/menu/$ /index.php?c=ajax&m=menu
+########################################################
+
+<Files *.js>
+Header add "Cache-Control" "max-age=604800"
+</Files>

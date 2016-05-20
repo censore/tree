@@ -1,7 +1,7 @@
 <?php 
 namespace core\components\db;
 
-use core\components\db;
+use core\components\db as MainDataBase;
 
 class Crud {
 
@@ -10,7 +10,7 @@ class Crud {
 	public $variables;
 
 	public function __construct($data = array()) {
-		$this->db =  new Db();
+		$this->db =  new MainDataBase\Db();
 		$this->variables  = $data;
 	}
 
@@ -130,6 +130,7 @@ class Crud {
 			}
 			$sql .= " ORDER BY " . implode(", ", $sortvals);
 		}
+
 		return $this->exec($sql);
 	}
 

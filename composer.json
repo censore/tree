@@ -8,15 +8,19 @@
 	},
 	"autoload": {
 		"classmap": [
+
 			"app/commands",
 			"app/controllers",
+			"app/components",
 			"app/models",
 			"app/helpers",
+
 			"vendor/controllers",
 			"vendor/interfaces",
 			"vendor/components",
 			"vendor/traits",
 			"vendor/models"
+
 		],
 		"files": [
 		]

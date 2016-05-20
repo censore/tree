@@ -14,18 +14,28 @@ abstract class getTypeHelper {
 
     }
     public static function getType($value){
+        $value = str_replace(['(','{','[',')', '}',']'], ' ', $value);
         $value = explode(' ', $value);
         $type = '';
         $len = null;
         switch($value[0]){
             case "int":
             case "integer":
-            case "varchar":
-                $len = self::removeSkobka($value[1]);
-                $type = ($value == 'int' || $value == 'integer'?'integer':'string');
+                $len = $value[1];
+                $type = 'text';
             break;
+            case "varchar":
+                $len = $value[1];
+                $type = 'text';
+                break;
+            case "text":
+                $type = 'textarea';
+                break;
+            case "date":
+            case "timestump":
+                $type = "date";
             default:
-                $type = 'string';
+                $type = $value[0];
         }
         return [
             $type,

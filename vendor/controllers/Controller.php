@@ -14,10 +14,15 @@ class Controller extends Config{
     public $fasades = [];
     public $activeClass;
     public $activeMethod;
+    public $systemDirectory;
+    public $requestType;
+    public $flashContent;
+    public $flashType = 'error';
     public function __construct(){}
     public function __clone(){}
     public function __copy(){}
     public function run(array $config){
+
         $this->_config = $config;
         parent::load();
         $site = $this->fasades['route']->startSite();
@@ -40,10 +45,9 @@ class Controller extends Config{
         return $this;
     }
     public function leazyLoader($property){
-        $property = 'core\\Controllers\\' . ucfirst(strtolower($property));
-
+        $_property = 'core\\Controllers\\' . ucfirst(strtolower($property));
         if(!isset($this->fasades[$property])){
-            $this->fasades[$property] = new $property();
+            $this->fasades[$property] = new $_property();
         }
 
         return $this->fasades[$property];
@@ -52,4 +56,8 @@ class Controller extends Config{
         return $this->fasades;
     }
 
+    public function flash($message, $type = 'alert alert-danger'){
+        $this->flashContent = $message;
+        $this->flashType = $type;
+    }
 }

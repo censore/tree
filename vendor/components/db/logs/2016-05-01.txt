@@ -1,0 +1,87 @@
+Time : 04:26:09
+SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+Raw SQL : INSERT INTO `tries` (`link`, `block_style_id`, `background_id`, `size_id`, `created_at`, `update_at`) VALUES (:link, :block_style_id, :background_id, :size_id, :created_at, :update_at)
+
+Time : 04:25:35
+SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+Raw SQL : INSERT INTO `tries` (`link`, `block_style_id`, `background_id`, `size_id`, `created_at`, `update_at`) VALUES (:link, :block_style_id, :background_id, :size_id, :created_at, :update_at)
+
+Time : 04:24:04
+SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+Raw SQL : INSERT INTO `tries` (`link`, `block_style_id`, `background_id`, `size_id`, `created_at`, `update_at`) VALUES (:link, :block_style_id, :background_id, :size_id, :created_at, :update_at)
+
+Time : 04:23:24
+SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+Raw SQL : INSERT INTO `tries` (`link`, `block_style_id`, `background_id`, `size_id`, `created_at`, `update_at`) VALUES (:link, :block_style_id, :background_id, :size_id, :created_at, :update_at)
+
+Time : 04:20:05
+SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1
+Raw SQL : INSERT INTO `tries` (id,link,block_style_id,background_id,size_id,created_at,update_at) VALUES (:link, :block_style_id, :background_id, :size_id, :created_at, :update_at)
+
+Time : 04:19:57
+SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1
+Raw SQL : INSERT INTO `tries` (id,link,block_style_id,background_id,size_id,created_at,update_at) VALUES (:link, :block_style_id, :background_id, :size_id, :created_at, :update_at)
+
+Time : 04:18:45
+SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1
+Raw SQL : INSERT INTO `tries` (id,link,block_style_id,background_id,size_id,created_at,update_at) VALUES (:link, :block_style_id, :background_id, :size_id, :created_at, :update_at)
+
+Time : 04:18:23
+SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1
+Raw SQL : INSERT INTO `tries` (id,link,block_style_id,background_id,size_id,created_at,update_at) VALUES (:link, :block_style_id, :background_id, :size_id, :created_at, :update_at)
+
+Time : 04:17:49
+SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1
+Raw SQL : INSERT INTO `tries` (id,link,block_style_id,background_id,size_id,created_at,update_at) VALUES (:link, :block_style_id, :background_id, :size_id, :created_at, :update_at)
+
+Time : 04:17:28
+SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1
+Raw SQL : INSERT INTO `tries` (id,link,block_style_id,background_id,size_id,created_at,update_at) VALUES (:link, :block_style_id, :background_id, :size_id, :created_at, :update_at)
+
+Time : 04:16:08
+SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1
+Raw SQL : INSERT INTO `tries` (id,link,block_style_id,background_id,size_id,created_at,update_at) VALUES (:link, :block_style_id, :background_id, :size_id, :created_at, :update_at)
+
+Time : 03:55:51
+SQLSTATE[HY000]: General error: 2031 
+Raw SQL : SELECT id,link,block_style_id,background_id,size_id,created_at,update_at FROM tries WHERE `link` = :link
+
+Time : 03:55:50
+SQLSTATE[HY000]: General error: 2031 
+Raw SQL : SELECT id,link,block_style_id,background_id,size_id,created_at,update_at FROM tries WHERE `link` = :link
+
+Time : 03:55:24
+SQLSTATE[HY000]: General error: 2031 
+Raw SQL : SELECT id,link,block_style_id,background_id,size_id,created_at,update_at FROM tries WHERE `link` = :link
+
+Time : 03:55:23
+SQLSTATE[HY000]: General error: 2031 
+Raw SQL : SELECT id,link,block_style_id,background_id,size_id,created_at,update_at FROM tries WHERE `link` = :link
+
+Time : 03:53:46
+SQLSTATE[HY000]: General error: 2031 
+Raw SQL : SELECT id,link,block_style_id,background_id,size_id,created_at,update_at FROM tries WHERE `link` = :link
+
+Time : 03:53:18
+SQLSTATE[42S22]: Column not found: 1054 Unknown column '5sNupY' in 'where clause'
+Raw SQL : SELECT id,link,block_style_id,background_id,size_id,created_at,update_at FROM tries WHERE `5sNupY` = :5sNupY
+
+Time : 03:52:34
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Array' in 'field list'
+Raw SQL : SELECT Array,9TtwfvSrvV,0,0,0,1462067554,Array FROM tries WHERE `9TtwfvSrvV` = :9TtwfvSrvV
+
+Time : 03:52:07
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Array' in 'field list'
+Raw SQL : SELECT Array,6EpSpOG,0,0,0,1462067527,Array FROM tries WHERE `6EpSpOG` = :6EpSpOG
+
+Time : 03:44:23
+SQLSTATE[42000] [1065] Query was empty
+
+Time : 03:37:16
+SQLSTATE[42000] [1065] Query was empty
+
+Time : 03:36:33
+SQLSTATE[42000] [1065] Query was empty
+
+Time : 03:35:47
+SQLSTATE[42000] [1065] Query was empty

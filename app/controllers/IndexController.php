@@ -15,6 +15,6 @@ use core\Controllers\Loader as app;
 
 class IndexController extends Application{
     public function indexAction(){
-        print_r(Loader::app()->View);
+        $this->view->currentView('index',[]);
     }
 }

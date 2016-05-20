@@ -106,10 +106,9 @@ class Db
         try {
             # Prepare query
             $this->sQuery = $this->pdo->prepare($query);
-            
-            # Add parameters to the parameter array	
+            # Add parameters to the parameter array
             $this->bindMore($parameters);
-            
+
             # Bind parameters
             if (!empty($this->parameters)) {
                 foreach ($this->parameters as $param => $value) {
@@ -127,12 +126,14 @@ class Db
                             break;
                     }
                     // Add type when binding the values to the column
+
                     $this->sQuery->bindValue($value[0], $value[1], $type);
                 }
             }
             
             # Execute SQL 
             $this->sQuery->execute();
+
         }
         catch (\PDOException $e) {
             # Write into log and display Exception
@@ -165,7 +166,8 @@ class Db
     {
         if (empty($this->parameters) && is_array($parray)) {
             $columns = array_keys($parray);
-            foreach ($columns as $i => &$column) {
+            foreach ($columns as $i => $column) {
+                //echo $column, '=>' , $parray[$column] , PHP_EOL;
                 $this->bind($column, $parray[$column]);
             }
         }
@@ -181,18 +183,21 @@ class Db
      */
     public function query($query, $params = null, $fetchmode = \PDO::FETCH_ASSOC)
     {
+
         $query = trim(str_replace("\r", " ", $query));
-        
+
         $this->Init($query, $params);
         
         $rawStatement = explode(" ", preg_replace("/\s+|\t+|\n+/", " ", $query));
-        
+
         # Which SQL statement is used 
         $statement = strtolower($rawStatement[0]);
-        
+
         if ($statement === 'select' || $statement === 'show') {
             return $this->sQuery->fetchAll($fetchmode);
-        } elseif ($statement === 'insert' || $statement === 'update' || $statement === 'delete') {
+        } elseif ($statement === 'insert' ) {
+            return $this->lastInsertId();
+        }elseif($statement === 'update' || $statement === 'delete') {
             return $this->sQuery->rowCount();
         } else {
             return NULL;

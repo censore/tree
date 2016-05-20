@@ -7,6 +7,16 @@
  */
 
 return [
+    'app' => [
+        'assets'=>[
+            'top'=>[
+                'application-startup.css',
+                'toolkit-startup.css',
+                'https://fonts.googleapis.com/css?family=Lora:400,400italic|Work+Sans:300,400,500,600'=>'remote'
+            ],
+            'bottom'=>[],
+        ],
+    ],
     'depends'=>[
         'db' => [
             'class' => 'core\\components\\db\\Db',
@@ -26,6 +36,7 @@ return [
         'app_directory' => '\app\Controllers\\',
     ],
     'system' => [
-        'view_path' => 'app.views'
+        'view' => 'app/views',
+        'layout' => 'main',
     ],
 ];
