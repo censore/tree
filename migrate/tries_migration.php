@@ -13,9 +13,10 @@ CREATE TABLE `tries` (
   `block_style_id` int(11) DEFAULT NULL,
   `background_id` int(11) DEFAULT NULL,
   `size_id` int(11) DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `update_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8
+) ENGINE=InnoDB AUTO_INCREMENT=202 DEFAULT CHARSET=utf8
 
 QUERY;
 
