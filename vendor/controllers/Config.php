@@ -12,7 +12,7 @@ use core\interfaces;
 use core\interfaces\ConfigGroupInterface;
 
 class Config {
-
+    public $_config;
     public function load(){
         foreach($this->_config as $key => $val){
             $class = 'core\Controllers\\' . ucfirst($key);

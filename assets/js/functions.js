@@ -114,7 +114,7 @@ function addRelate(){
     });
     $('#modalRelateFrom').attr('class',"selectpicker");
     $('#modalRelateFrom').attr('data-live-search',"true");
-    Selectpicker.render();
+    
 
 }
 function saveSettingsPosition(){

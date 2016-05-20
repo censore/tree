@@ -1,0 +1,37 @@
+#!/usr/bin/env php
+<?php
+$current = dirname(__FILE__).'/..';
+require_once $current.'/vendor/autoload.php';
+$config = require_once($current . '/app/config/config.php');
+
+use core\Controllers\Loader;
+$app = Loader::console($current . '/');
+
+$params = getParams();
+
+$commands = [
+    'migrate',
+    'dump',
+];
+if(in_array($params[0], $commands)){
+    require_once __DIR__ . '/../vendor/console/'.ucfirst($params[0]).'.php';
+}
+
+function getParams()
+{
+    $rawParams = [];
+    if (isset($_SERVER['argv'])) {
+        $rawParams = $_SERVER['argv'];
+        array_shift($rawParams);
+    }
+    $params = [];
+    foreach ($rawParams as $param) {
+        if (preg_match('/^--(\w+)(=(.*))?$/', $param, $matches)) {
+            $name = $matches[1];
+            $params[$name] = isset($matches[3]) ? $matches[3] : true;
+        } else {
+            $params[] = $param;
+        }
+    }
+    return $params;
+}
