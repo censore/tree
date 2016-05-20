@@ -1,5 +1,4 @@
 <?php
-
 $_db = $config['depends']['db'];
 
 $class = $_db['class'];
@@ -13,18 +12,45 @@ $db->setCharset($_db['params']['charset']);
 
 $db->connect();
 
-$stm = $db->pdo->query("SHOW TABLES");
 
-$stm->execute();
-$tables = $stm->fetchAll(\PDO::FETCH_ASSOC);
 
-foreach($tables as $table){
-    $tab = $db->pdo->query('SHOW CREATE TABLE ' . $table['Tables_in_family']);
-    $tab->execute();
-    $create = $tab->fetch(\PDO::FETCH_ASSOC)['Create Table'];
-    $migrateData = [];
-    $migrateData[] = "<?php\n\n\n/*-----Migration table `{$table['Tables_in_family']}`------*/\n\n\n\n";
-    $migrateData[] = '$queryCreate[] = <<<QUERY'."\n".$create."\n\n"."QUERY;";
-    $migrateData[] = "\n\n\n\n/*-----Migration table `{$table['Tables_in_family']}` END------*/";
-    file_put_contents($current . '/migrate/' . $table['Tables_in_family'] . '_migration.php', implode("\n", $migrateData));
+if($params[1] == 'replace'){
+
 }
+$files = [];
+if ($handle = opendir($current . '/migrate/')) {
+
+    while (false !== ($entry = readdir($handle))) {
+        if($entry == '.' || $entry == '..') continue;
+        $files[] = $current . '/migrate/' . $entry;
+    }
+    closedir($handle);
+}
+
+print("Getting " . count($files) ." migration files\n-----------------------------------\n");
+
+$queryCreate = [];
+
+foreach ($files as $file){
+    require_once $file;
+}
+
+foreach($queryCreate as $table=>$query){
+    print("Try migrate: {$table}... ");
+    if($params[1] == 'replace'){
+        echo " [drop table enabled] ";
+        $query = "DROP TABLE IF EXISTS `{$table}`;\n\n" . $query;
+    }
+    print("\n\n\n".$query . "\n\n\n");
+    $res = $db->query($query);
+    $result = $res->execute();
+    if(!$result){
+        echo " - FAIL\n\n";
+        print($query);
+    }else{
+        echo " - OK\n\n";
+    }
+}
+print("\n\n---------------------------------\n\n");
+print('Migrate complete');
+

@@ -6,7 +6,7 @@
 
 
 
-$queryCreate[] = <<<QUERY
+$queryCreate["tries"] = <<<QUERY
 CREATE TABLE `tries` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `link` varchar(50) DEFAULT NULL,

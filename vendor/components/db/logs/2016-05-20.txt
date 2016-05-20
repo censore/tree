@@ -1,2 +1,74 @@
+Time : 16:27:34
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'CREATE TABLE `backgrounds` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `link` va' at line 3
+Raw SQL : DROP TABLE IF EXISTS `backgrounds`;
+
+CREATE TABLE `backgrounds` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `link` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+
+Time : 16:26:35
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'CREATE TABLE `backgrounds` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `link` va' at line 3
+Raw SQL : DROP TABLE IF EXISTS `articles`;
+
+CREATE TABLE `backgrounds` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `link` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+
+Time : 16:26:03
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'CREATE TABLE `backgrounds` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `link` va' at line 3
+Raw SQL : DROP TABLE IF EXISTS `articles`;
+
+CREATE TABLE `backgrounds` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `link` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+
+Time : 16:24:20
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'CREATE TABLE `backgrounds` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `link` va' at line 3
+Raw SQL : DROP TABLE IF EXISTS `articles`;
+
+CREATE TABLE `backgrounds` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `link` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+
+Time : 16:23:54
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'CREATE TABLE `backgrounds` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `link` va' at line 3
+Raw SQL : DROP TABLE IF EXISTS `articles`;
+
+CREATE TABLE `backgrounds` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `link` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+
+Time : 16:21:08
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'CREATE TABLE `backgrounds` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `link` va' at line 3
+Raw SQL : DROP TABLE IF EXISTS `articles`;
+
+CREATE TABLE `backgrounds` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `link` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+
 Time : 09:59:19
 SQLSTATE[HY000] [1049] Unknown database 'family'
